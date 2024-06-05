@@ -65,7 +65,6 @@ console.log(average(arr));
 var arr = [2, 4, 6, 8, 10];
 
 function findMedian(arr) {
-  // Bubble sort to sort the array
   for (let i = 0; i < arr.length - 1; i++) {
     for (let j = 0; j < arr.length - 1 - i; j++) {
       if (arr[j] > arr[j + 1]) {
@@ -77,7 +76,6 @@ function findMedian(arr) {
     }
   }
 
-  // After that we find the median
   const median = (arr.length / 2) >> 0;
 
   // If array length is odd, return the middle element
@@ -104,7 +102,7 @@ function DublicatCheckerFunction(arr) {
       }
     }
     if (!isDuplicate) {
-      uniqueArray[uniqueArray.length] = arr[i]; // Assign value directly to array index
+      uniqueArray[uniqueArray.length] = arr[i]; 
     }
   }
   return uniqueArray;
@@ -139,7 +137,7 @@ function Ascending_SortFunction(arr) {
 // testing Example :
 const arr = [30, 20, 50, 40, 80, 70, 60, 10];
 const sortArry = Ascending_SortFunction(arr);
-console.log(sortArry); //   print the sorted array
+console.log(sortArry); 
 
 // // 8-Write a function to sort an array in descending order.
 
@@ -173,7 +171,6 @@ console.log(sortArry2);
 function shuffleArray(arr) {
   const length = arr.length;
 
-  // Simple pseudo-random number generator
   let BaseValue = 1;
 
   // shuffle random function
@@ -182,12 +179,9 @@ function shuffleArray(arr) {
     return BaseValue / 0xffffffff;
   }
 
-  // Iterate over each element in the array
   for (let i = length - 1; i > 0; i--) {
-    // Generate a pseudo-random index within the range of elements before i
     const random = ((i * ShuffleRandomFunction()) | 0) % (i + 1);
 
-    // Swap the current element with randomly selected element
     const temp = arr[i];
     arr[i] = arr[random];
     arr[random] = temp;
@@ -196,11 +190,8 @@ function shuffleArray(arr) {
   return arr;
 }
 
-// Example array
 const arr = [1, 2, 3, 4, 5];
 
-// Shuffle the contents of the array
 shuffleArray(arr);
 
-// Print the shuffled array
 console.log(arr);
